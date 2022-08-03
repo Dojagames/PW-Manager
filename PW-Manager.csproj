@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>PW_Manager</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="add-folder.png" />
+    <None Remove="add.png" />
+    <None Remove="contact-book.png" />
+    <None Remove="copyPw.png" />
+    <None Remove="copyUser.png" />
+    <None Remove="credit-card.png" />
+    <None Remove="delete.png" />
+    <None Remove="dots-menu.png" />
+    <None Remove="edit.png" />
+    <None Remove="expand.png" />
+    <None Remove="favicon.ico" />
+    <None Remove="Google.ico" />
+    <None Remove="Launch.png" />
+    <None Remove="more.png" />
+    <None Remove="password.png" />
+    <None Remove="schreiben.png" />
+    <None Remove="setting.png" />
+    <None Remove="Show.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="favicon.ico" />
+    <Resource Include="Resources\Pngs\copyPw.png" />
+    <Resource Include="Resources\Pngs\copyUser.png" />
+    <Resource Include="Resources\Pngs\delete.png" />
+    <Resource Include="Resources\Pngs\edit.png" />
+    <Resource Include="Resources\Pngs\more.png" />
+    <Resource Include="Resources\Pngs\Launch.png" />
+    <Resource Include="Resources\Icos\Google.ico" />
+    <Resource Include="Resources\Pngs\add-folder.png" />
+    <Resource Include="Resources\Pngs\expand.png" />
+    <Resource Include="Resources\Pngs\add.png" />
+    <Resource Include="Resources\Pngs\contact-book.png" />
+    <Resource Include="Resources\Pngs\credit-card.png" />
+    <Resource Include="Resources\Pngs\dots-menu.png" />
+    <Resource Include="Resources\Pngs\password.png" />
+    <Resource Include="Resources\Pngs\schreiben.png" />
+    <Resource Include="Resources\Pngs\Show.png" />
+    <Resource Include="Resources\Pngs\setting.png" />
+  </ItemGroup>
+
+</Project>

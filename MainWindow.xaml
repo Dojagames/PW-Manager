@@ -1,0 +1,229 @@
+﻿<Window x:Class="PW_Manager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PW_Manager"
+        mc:Ignorable="d" Foreground="#d4d4d4" 
+        Title="MainWindow" Height="450" Width="800" Closing="Window_Closing" Icon="/favicon.ico">
+
+    <Grid Background="#3f3f3f">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="170"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="2"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="2"/>
+        </Grid.RowDefinitions>
+
+
+        <!-- NavBar -->
+        
+        
+        <!-- Search -->
+        <Border Grid.Row="0" Grid.Column="0" Margin="5" CornerRadius="15" BorderThickness="1" BorderBrush="#d4d4d4" >
+            <TextBox Text="Search" x:Name="SearchTextBox" Background="Transparent" BorderThickness="0" Margin="10,2,0,0" Foreground="#d4d4d4" TextChanged="Search_TextChanged" GotFocus="SearchTextBox_GotFocus" />
+        </Border>
+
+        <!-- Categories -->
+        <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch" x:Name="Categories" Margin="0,5,0,0">
+
+            <!-- Passwords -->
+            <Grid x:Name="PasswordSidePanel" Height="28" MouseLeftButtonDown="Password_On_Click" MouseEnter="Password_Hover_Enter" MouseLeave="Password_Hover_Leave" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Column="0" Source="/Resources/Pngs/password.png"  Stretch="Fill" 
+                       RenderTransformOrigin="1,1" Height="25">
+                    <Image.RenderTransform >
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform X="-4" Y="-1"/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <TextBlock Grid.Column="1"  Text="Passwords" TextAlignment="Left" 
+                           VerticalAlignment="Center" FontSize="14"/>
+            </Grid>
+
+            <!-- Notes -->
+            <Grid x:Name="NoteSidePanel" Height="28" MouseLeftButtonDown="Notes_On_Click" MouseEnter="Note_Hover_Enter" MouseLeave="Note_Hover_Leave">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Column="0" Source="/Resources/Pngs/schreiben.png"  Stretch="Fill" 
+                       RenderTransformOrigin="1,1" Height="25">
+                    <Image.RenderTransform >
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.65" ScaleY="0.65"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform X="-3.5" Y="-3.5"/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <TextBlock Grid.Column="1"  Text="Notes" TextAlignment="Left" 
+                           VerticalAlignment="Center" FontSize="14"/>
+            </Grid>
+
+            <!-- Contacts -->
+            <Grid x:Name="ContactSidePanel" Height="28" MouseLeftButtonDown="Contacts_On_Click" MouseEnter="Contact_Hover_Enter" MouseLeave="Contact_Hover_Leave">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Column="0" Source="/Resources/Pngs/contact-book.png"  Stretch="Fill" 
+                       RenderTransformOrigin="1,1" Height="25">
+                    <Image.RenderTransform >
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.65" ScaleY="0.65"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform X="-3.5" Y="-3.5"/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <TextBlock Grid.Column="1"  Text="Contacts" TextAlignment="Left" 
+                           VerticalAlignment="Center" FontSize="14"/>
+            </Grid>
+
+        </StackPanel>
+
+        <!-- Spacer -->
+        <Label Grid.Row="2" Background="#d4d4d4" />
+
+        <!-- Custom Folder -->
+        <Grid Grid.Row="3" Grid.Column="0" Margin="0,2,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Nav -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="110"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="Folder" Margin="5,0,0,0"/>
+
+                <Image Grid.Column="1" Source="/Resources/Pngs/add-folder.png" RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.6" ScaleY="0.6"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <Image x:Name="ExpandImage" Source="/Resources/Pngs/expand.png" Stretch="Uniform" Grid.Column="2"/>
+
+
+            </Grid>
+
+            <StackPanel Grid.Row="1" x:Name="FolderPanel">
+                <Grid Height="27">
+                    <TextBlock Text="none" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,5,0,5"/>
+                </Grid>
+            </StackPanel>
+        </Grid>
+
+        <!-- Spacer -->
+        <Label Grid.Row="4" Background="#d4d4d4" />
+
+        <!-- Bottom -->
+        <Grid Grid.Row="5" Grid.Column="0" Height="35">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="94"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="1" Height="30" Width="30" Source="/Resources/Pngs/add.png" RenderTransformOrigin="0.5,0.5" MouseLeftButtonDown="PwGen_MouseLeftButtonDown">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="0.9" ScaleY="0.9"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Grid.Column="3" Height="30" Width="30" Source="/Resources/Pngs/setting.png" RenderTransformOrigin="0.5,0.5" MouseLeftButtonDown="SettingsClick">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="0.9" ScaleY="0.9"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+
+        </Grid>
+
+
+        <!-- MainWindow -->
+        <Grid Grid.Column="1" Grid.RowSpan="7" Background="#1d1f24">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="5"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- TopBar -->
+            <Grid Grid.Row="0" Grid.Column="0" Margin="0,5,0,0" x:Name="Top_bar">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="90"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Text (current Display "All Items") -->
+                <TextBlock x:Name="Text_Display_Mode" Grid.Column="0" Text="Password" TextAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+
+                <!-- Add Item Button -->
+                <Border Grid.Column="2" Margin="5" CornerRadius="10" BorderThickness="1" BorderBrush="#d4d4d4" MouseLeftButtonDown="btn_add_click" VerticalAlignment="Center">
+                    <TextBlock Text="Add Item" TextAlignment="Center" Background="Transparent" Margin="0,0.8,0,0"/>
+                </Border>
+            </Grid>
+
+
+            <!-- Item Array -->
+            <ScrollViewer VerticalScrollBarVisibility="Hidden" Grid.Row="1">
+                <StackPanel x:Name="MainPanel" >
+                </StackPanel>
+            </ScrollViewer>
+
+            <!-- Scrollbar -->
+            <ScrollBar Grid.Column="7" Grid.RowSpan="2"/>
+
+        </Grid>
+
+        
+
+    </Grid>
+</Window>

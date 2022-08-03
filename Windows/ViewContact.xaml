@@ -1,0 +1,98 @@
+﻿<Window x:Class="PW_Manager.Windows.ViewContact"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PW_Manager.Windows"
+        mc:Ignorable="d" Foreground="White" WindowStartupLocation="CenterScreen"
+        Title="ViewContact" Height="520" Width="447" Icon="/favicon.ico">
+    <Grid Background="#1d1f24">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="0.05*"/>
+            <RowDefinition Height="auto"/>
+
+            <RowDefinition Height="0.3*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title -->
+        <TextBlock Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" TextAlignment="Center" 
+                   HorizontalAlignment="Stretch" Text="Name" FontWeight="SemiBold" FontSize="20"/>
+
+        <Border Grid.Column="1" Grid.Row="2" Margin="5" CornerRadius="11" BorderThickness="1" BorderBrush="White">
+            <TextBox IsReadOnly="True" x:Name="nameTextBox" Text="Name" Background="Transparent" BorderThickness="0" Margin="10,2,10,2" Foreground="#60FFFFFF" VerticalAlignment="Center"/>
+        </Border>
+
+        <TextBlock x:Name="wrongNameText" Grid.Column="1" Grid.Row="3" VerticalAlignment="Top" TextAlignment="Left" 
+                   HorizontalAlignment="Left" Text="Name can't be empty" FontSize="8" Foreground="#db2b14" Margin="5,0,0,0" Visibility="Hidden"/>
+
+        <!-- Details -->
+        <TextBlock Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" TextAlignment="Center" 
+                   HorizontalAlignment="Stretch" Text="Details" FontWeight="SemiBold" FontSize="20"/>
+
+        <Border Grid.Column="1" Grid.Row="5" Margin="5" CornerRadius="11" BorderThickness="1" BorderBrush="White">
+            <TextBox IsReadOnly="True" x:Name="emailTextBox" Text="Email" Background="Transparent" BorderThickness="0" Margin="10,2,10,2" Foreground="#60FFFFFF" VerticalAlignment="Center"/>
+        </Border>
+
+        <TextBlock x:Name="emailHelperText" Grid.Column="0" Grid.Row="5" Text="Email" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Light"/>
+
+        <Border Grid.Column="1" Grid.Row="6" Margin="5" CornerRadius="11" BorderThickness="1" BorderBrush="White">
+            <TextBox IsReadOnly="True" x:Name="numberTextBox" Text="Number" Background="Transparent" BorderThickness="0" Margin="10,2,10,2" Foreground="#60FFFFFF" VerticalAlignment="Center"/>
+        </Border>
+
+        <TextBlock x:Name="numberHelperText" Grid.Column="0" Grid.Row="6" Text="Number" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Light"/>
+
+        <Border Grid.Column="1" Grid.Row="7" Margin="5" CornerRadius="11" BorderThickness="1" BorderBrush="White">
+            <TextBox IsReadOnly="True" x:Name="birthdayTextBox" Text="Birthday" Background="Transparent" BorderThickness="0" Margin="10,2,10,2" Foreground="#60FFFFFF" VerticalAlignment="Center"/>
+        </Border>
+
+        <TextBlock x:Name="birthdayHelperText" Grid.Column="0" Grid.Row="7" Text="birthday" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Light"/>
+
+        <!-- Adress -->
+        <TextBlock Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" TextAlignment="Center" 
+                   HorizontalAlignment="Stretch" Text="Adress" FontWeight="SemiBold" FontSize="20"/>
+
+        <Border Grid.Column="1" Grid.Row="10" Margin="5" CornerRadius="11" BorderThickness="1" BorderBrush="White">
+            <TextBox IsReadOnly="True" x:Name="streetTextBox" Text="Street" Background="Transparent" BorderThickness="0" Margin="10,2,10,2" Foreground="#60FFFFFF" VerticalAlignment="Center"/>
+        </Border>
+
+        <TextBlock x:Name="streetHelperText" Grid.Column="0" Grid.Row="10" Text="street" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Light"/>
+
+        <Border Grid.Column="1" Grid.Row="11" Margin="5" CornerRadius="11" BorderThickness="1" BorderBrush="White">
+            <TextBox IsReadOnly="True" x:Name="cityTextBox" Text="City" Background="Transparent" BorderThickness="0" Margin="10,2,10,2" Foreground="#60FFFFFF" VerticalAlignment="Center"/>
+        </Border>
+
+        <TextBlock x:Name="cityHelperText" Grid.Column="0" Grid.Row="11" Text="city" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Light" />
+
+        <!-- Buttons -->
+       
+
+            
+
+            <Border Grid.Column="1" Grid.Row="13"  Margin="50,5,50,5" CornerRadius="11" BorderThickness="1" BorderBrush="White" Background="#20FFFFFF" MouseLeftButtonDown="CancelClick">
+                <TextBlock Text="Cancel" Background="Transparent" Margin="0,2,0,2" 
+                         Foreground="White" VerticalAlignment="Center" TextAlignment="Center" 
+                         HorizontalAlignment="Stretch"/>
+            </Border>
+       
+
+
+    </Grid>
+</Window>

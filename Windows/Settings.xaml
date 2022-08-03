@@ -1,0 +1,72 @@
+﻿<Window x:Class="PW_Manager.Windows.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PW_Manager.Windows"
+        mc:Ignorable="d" Foreground="White" WindowStartupLocation="CenterScreen"
+        Title="Settings" Height="450" Width="800" Icon="/favicon.ico">
+    <Grid Background="#1d1f24">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="0.5*"/>
+            
+
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" TextAlignment="Center" 
+                   HorizontalAlignment="Stretch" Text="Settings" FontWeight="SemiBold" FontSize="20"/>
+
+        
+
+        <Grid Grid.Row="3" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Length -->
+
+            <TextBlock Grid.Row="1" Text="Lock Manager after (in h)" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+
+            <Border Grid.Column="1" Grid.Row="1" Margin="5,5,120,5" CornerRadius="11" BorderThickness="1" BorderBrush="White">
+                <TextBox  x:Name="timeText" Text="" Background="Transparent" BorderThickness="0" Margin="10,2,10,2" Foreground="#60FFFFFF" VerticalAlignment="Center"/>
+            </Border>
+
+            
+
+            <Border Grid.Column="0" Grid.Row="7" Margin="0,5,20,5" CornerRadius="11" BorderThickness="1" BorderBrush="White" HorizontalAlignment="Right" Background="#2f4887" Width="120" Height="20" MouseLeftButtonDown="SaveClick">
+                <TextBlock Text="Save" Background="Transparent" Margin="0,2,0,2" 
+                         Foreground="White" VerticalAlignment="Center" TextAlignment="Center" 
+                         HorizontalAlignment="Stretch"/>
+            </Border>
+
+            <Border Grid.Column="1" Grid.Row="7" Margin="20,5,0,5" CornerRadius="11" BorderThickness="1" BorderBrush="White" HorizontalAlignment="Left" Background="#20FFFFFF" Width="80" Height="20" MouseLeftButtonDown="CancelClick">
+                <TextBlock Text="Cancel" Background="Transparent" Margin="0,2,0,2" 
+                         Foreground="White" VerticalAlignment="Center" TextAlignment="Center" 
+                         HorizontalAlignment="Stretch"/>
+            </Border>
+
+        </Grid>
+
+
+    </Grid>
+</Window>
