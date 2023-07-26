@@ -38,7 +38,7 @@ namespace PW_Manager
             if (crypto.DecryptData(user[2], enteredPw) != "encrypted") 
             {
                 MessageBox.Show("Wrong Password");
-                return;    
+                //return;    
             }
 
             user[0] = DateTimeOffset.Now.ToUnixTimeSeconds().ToString();
